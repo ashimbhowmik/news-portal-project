@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header>
+    <header class=" my-4">
         <nav class="navbar bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -35,7 +35,8 @@
                         <li><button>All News</button></li>
                     </ul>
                 </div>
-                <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <p class="text-xl lg:ml-5 font-bold"><span class="text-orange-600">WC
+                    </span> News72</p>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
@@ -50,7 +51,7 @@
                     <li><button>All News</button></li>
                 </ul>
             </div>
-            <div class="navbar-end hidden lg:flex">
+            <div class="navbar-end hidden lg:flex lg:mr-8">
                 <ul class="menu menu-horizontal p-0">
                     <li><button>News</button></li>
                     <li><button>Blog</button></li>
@@ -63,6 +64,47 @@
             </div>
         </nav>
     </header>
+    <hr>
+    <main class="lg:container lg:mx-auto  my-10">
+        <section class="px-10 lg:px-0 mb-10">
+            <div
+                class=" lg:pl-8 h-14 text-xl bg-black rounded-md w-full flex items-center justify-center lg:justify-start">
+                <p><span>0</span> items found here</p>
+            </div>
+        </section>
+        <section class=" flex mt-7 lg:flex items-center justify-between lg:px-0 px-10">
+            <div class="lg:flex items-center lg:justify-between">
+                <p class="mr-6 mt-3 lg:mt-0 mb-8 lg:mb-0">Short By View: </p>
+                <ul class="menu menu-horizontal p-0 bg-gray-600" disabled>
+                    <li tabindex=" 0">
+                        <button>
+                            Default
+                            <svg class=" fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                viewBox="0 0 24 24">
+                                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex flex-col  lg:flex lg:flex-row lg:items-center lg:justify-between">
+                <button class="btn btn-primary lg:mr-6 mb-6 lg:mb-0">Today's Pick</button>
+                <button class="btn btn-outline btn-info">Trending</button>
+            </div>
+        </section>
+        <section class="mt-10 p-5 bg-base-200 rounded-xl">
+            <div class="card lg:card-side bg-base-200 shadow-xl mb-7">
+                <figure><img src="https://placeimg.com/400/400/arch" alt="Album"></figure>
+                <div class="card-body">
+                    <h2 class="card-title">New album is released!</h2>
+                    <p>Click the button to listen on Spotiwhy app.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Listen</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
         <div class="grid grid-flow-col gap-4">
             <a class="link link-hover">About us</a>
