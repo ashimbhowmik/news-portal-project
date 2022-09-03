@@ -63,25 +63,26 @@
 
 // https://openapi.programming-hero.com/api/news/categories
 
-const loadNews = async (search, dataLimit) => {
+const loadNews = async () => {
     try {
         const url = `https://openapi.programming-hero.com/api/news/categories`
         const res = await fetch(url);
         const data = await res.json();
-        displayNews(data.data.news_category, dataLimit);
+        displayNews(data.data.news_category);
     }
     catch {
 
     }
 }
 
-const displayNews = (allNews, dataLimit) => {
+const displayNews = (allNews) => {
     // console.log(allNews);
 
     const newsContainer = document.getElementById('news-btn');
 
     // newsContainer.innerHTML = '';
     const navberDiv = document.createElement('div');
+    toggleSpinner(true);
     navberDiv.innerHTML = `
     <nav class="navbar bg-base-100">
         <div class="">
@@ -118,16 +119,20 @@ const displayNews = (allNews, dataLimit) => {
                 <li class="lg:mr-16"><button onclick="loadNewsDetails('${allNews[5].category_id}')">${allNews[5].category_name}</button></li>
                 <li class="lg:mr-16"><button onclick="loadNewsDetails('${allNews[6].category_id}')">${allNews[6].category_name}</button></li>
                 <li class="lg:mr-16"><button onclick="loadNewsDetails('${allNews[7].category_id}')">${allNews[7].category_name}</button></li>
+                
             </ul>
         </div>
     </nav>
     `;
+
     newsContainer.appendChild(navberDiv);
-    console.log(news);
+    // console.log(news);
 
 }
 
+
 const loadNewsDetails = async category_id => {
+    toggleSpinner(true);
     const url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`;
     const res = await fetch(url);
     const data = await res.json();
@@ -135,6 +140,7 @@ const loadNewsDetails = async category_id => {
 }
 
 const displayNewsAll = idNumber => {
+
     // console.log(idNumber);
     const newsShows = document.getElementById('news-container');
     newsShows.innerHTML = '';
@@ -187,6 +193,7 @@ const displayNewsAll = idNumber => {
         newsShows.appendChild(newsDiv);
 
     });
+    toggleSpinner(false);
 }
 
 const newsDetail = async news_id => {
@@ -213,6 +220,17 @@ const newsModalDetails = newsModal => {
 
 }
 
+// loder js start here
+
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('spinner');
+    if (isLoading) {
+        loaderSection.classList.remove('hidden');
+    }
+    else {
+        loaderSection.classList.add('hidden');
+    }
+}
 newsDetail();
 loadNewsDetails();
 loadNews();
