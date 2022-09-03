@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>World News Store</title>
 </head>
 
-<body>
+<body class="bg-base-100">
     <header class="lg:my-4 px-4 mt-4">
         <nav class="navbar bg-base-100">
             <div class="navbar-start">
@@ -47,7 +47,7 @@
                 <p><span id="news-found">0</span> items found here</p>
             </div>
         </section>
-        <section class=" flex mt-7 lg:flex items-center justify-between lg:px-0 px-10">
+        <section class=" flex mt-7 lg:flex items-center justify-between lg:px-0 px-10 mb-6">
             <div class="lg:flex items-center lg:justify-between">
                 <p class="mr-6 mt-3 lg:mt-0 mb-8 lg:mb-0">Short By View: </p>
                 <ul class="menu menu-horizontal p-0 bg-gray-600 rounded-md">
@@ -67,7 +67,10 @@
                 <button class="btn btn-outline btn-info">Trending</button>
             </div>
         </section>
-        <section id="news-container" class="mt-10 p-5 bg-base-200 rounded-xl">
+        <div id="no-found-message" class="text-center hidden text-yellow-400 mt-4">
+            <h3 class="text-yellow-400 text-4xl">No News found here. Please try new search</h3>
+        </div>
+        <section id="news-container" class=" bg-base-200 rounded-xl">
 
             <!-- Card Design -->
 
@@ -86,7 +89,6 @@
                 <h3>Publish Date: <span id="data-publised"></span></h3>
             </div>
         </div>
-
 
     </main>
     <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
