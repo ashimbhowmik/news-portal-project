@@ -139,7 +139,7 @@ const displayNewsAll = idNumber => {
     const newsShows = document.getElementById('news-container');
     newsShows.innerHTML = '';
     idNumber.forEach(news => {
-        console.log(news);
+        // console.log(news); 
         const newsDiv = document.createElement('div');
         newsDiv.innerHTML = `
         <div class="card lg:card-side bg-base-200 shadow-xl mb-7">
@@ -178,7 +178,7 @@ const displayNewsAll = idNumber => {
                             <input type="radio" name="rating-1" class="mask mask-star" />
                             <input type="radio" name="rating-1" class="mask mask-star" />
                         </div>
-                        <label onclick="loadNewsDetail('${news._id}')" for="my-modal-3" class="btn modal-button"><i class="fa-solid fa-arrow-right"></i></label>
+                        <label onclick="newsDetail('${news._id}')" for="my-modal-3" class="btn modal-button"><i class="fa-solid fa-arrow-right"></i></label>
                     </div>
             </div>
         </div>
@@ -189,30 +189,30 @@ const displayNewsAll = idNumber => {
     });
 }
 
-// const newsDetail = async id => {
-//     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
-//     const res = await fetch(url);
-//     const data = await res.json();
-//     newsModalDetails(data.data);
-// }
+const newsDetail = async news_id => {
+    const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    newsModalDetails(data.data[0]);
+}
 
-// const newsModalDetails = phone => {
-//     console.log(phone);
-//     const modalTitle = document.getElementById('phoneDetailModalLabel');
-//     modalTitle.innerText = phone.name;
-//     const imageDisplay = document.getElementById('image-details');
-//     imageDisplay.innerHTML = `
-//         <img src="${phone.image}" alt="">
-//     `;
-//     const phoneDetails = document.getElementById('phone-details');
-//     phoneDetails.innerHTML = `
-//         <P>Realse Date: ${phone.releaseDate ? phone.releaseDate : 'No Realse Date Found'}</P>
-//         <p>Chip Set : ${phone.mainFeatures ? phone.mainFeatures.chipSet : 'No Chip Set Features here'}</p>
-//         <p>Storage : ${phone.mainFeatures ? phone.mainFeatures.memory : 'No Storage Features here'}</p>
-//         <p>Bluetooth: ${phone.others ? phone.others.Bluetooth : 'No Bluetooth Features here'}</p >
+const newsModalDetails = newsModal => {
+    console.log(newsModal);
+    const imageDisplay = document.getElementById('modal-div');
+    imageDisplay.innerHTML = `
+    <img class="w-full" src="${newsModal.thumbnail_url}" alt="Album">
+    `;
+    const modalTitle = document.getElementById('newsDetails');
+    modalTitle.innerText = newsModal.title;
 
-//         `;
-// }
-// newsDetail();
+    const authorName = document.getElementById('author-name');
+    authorName.innerText = newsModal.author.name;
+
+    const datePublised = document.getElementById('data-publised');
+    datePublised.innerText = newsModal.author?.published_date;
+
+}
+
+newsDetail();
 loadNewsDetails();
 loadNews();
