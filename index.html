@@ -22,7 +22,35 @@
             <div class="navbar-end lg:flex lg:mr-8">
                 <ul class="menu menu-horizontal p-0">
                     <li class=""><button>News</button></li>
-                    <li><button>Blog</button></li>
+                    <li class="mr-2 lg:mr-4">
+                        <label for="my-modal-5" class="btn modal-button ">Blog</label>
+                        <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+                        <div class="modal">
+                            <div class="modal-box w-11/12 max-w-5xl">
+                                <h1 class="mb-4">1. Difference between var , let and const ?</h1>
+                                <p class="mb-4 text-sm">Ans : Variables declared with var and const are scoped to the
+                                    immediate function body.
+                                    Variables declared with the var keyword are hoisted. Hoisting means that the
+                                    variable can be accessed in their enclosing scope even before they are declared.
+                                    Variables declared with the let keyword are block-scoped, which means the variables
+                                    will have scope to the immediate enclosing block.</p>
+                                <h1 class="mb-4">2. Difference between arrow function and regular function ?</h1>
+                                <p class="mb-4">Ans : An arrow function is also known as the fat arrow function. It is a
+                                    new feature introduced in ES6 that is a more concise syntax for writing function
+                                    expressions. Both regular JavaScript functions and arrow functions work in a similar
+                                    manner but there are some differences between them. Let's see the differences below:
+                                    1.Syntax 2.Arguments binding 3.Use of this keyword 4.Using a new keyword</p>
+                                <h1 class="mb-4">3. Why we use template string in Javascript ?</h1>
+                                <p>Ans : Template literals are literals delimited with backtick (`) characters, allowing
+                                    for multi-line strings, for string interpolation with embedded expressions, and for
+                                    special constructs called tagged templates</p>
+                                <div class="modal-action border-0">
+                                    <label for="my-modal-5" class="btn bg-red-700 border-0">Close</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
                     <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                         <div class="w-10 rounded-full">
                             <img src="https://placeimg.com/80/80/people" />
@@ -68,7 +96,7 @@
             </div>
         </section>
         <div id="no-found-message" class="text-center hidden text-yellow-400 mt-4">
-            <h3 class="text-yellow-400 text-4xl">No News found here. Please try new search</h3>
+            <h3 class="text-yellow-400 lg:text-4xl">No News found here. Please try new search</h3>
         </div>
         <section id="news-container" class=" bg-base-200 rounded-xl">
 
@@ -81,7 +109,6 @@
         <div class="modal">
             <div class="modal-box relative">
                 <figure id="modal-div" class="mb-4">
-
                 </figure>
                 <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                 <h3 id="newsDetails" class="text-lg font-bold mb-4"></h3>
@@ -121,12 +148,14 @@
             </div>
         </div>
         <div>
-            <p class="mb-5 text-white"><i>Developed by &copy; <span class="text-yellow-500">Ashim Bhowmik Amit</span>
-                    2022</i></p>
+            <p class="mb-5 text-white"><i>Developed by &copy; <span class="text-yellow-500">Ashim Bhowmik
+                        Amit</span> 2022</i></p>
         </div>
     </footer>
 
+    <script src="js/navber.js"></script>
     <script src="js/news.js"></script>
+    <script src="js/modal.js"></script>
 
 </body>
 
