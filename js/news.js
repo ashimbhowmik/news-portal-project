@@ -25,13 +25,13 @@ const displayNewsAll = idNumber => {
             const newsDiv = document.createElement('div');
             newsDiv.innerHTML = `
             <div class="lg:flex py-4 px-4 mb-5 drop-shadow-xl">
-                <div class="lg:w-3/12 w-full mb-4 lg:mb-0">
+                <div class="lg:w-3/12 w-full mb-4 lg:mb-0 ">
                     <figure><img class="w-full h-96" src="${news.thumbnail_url}" alt="Album"></figure>
                 </div>
-                <div class="lg:w-9/12 w-full lg:ml-4">
-                    <h1 class="mb-4">${news.title}</h1>
+                <div class="lg:w-9/12 w-full lg:ml-4 ">
+                    <h1 class="mb-4 lg:text-2xl text-orange-400">${news.title ? news.title : 'There is no title'}</h1>
                     <p class="h-48 mb-4 text-ellipsis overflow-hidden hidden lg:block">${news.details}</p>
-                    <p class="mb-6 truncate  ">${news.details}</p>
+                    <p class="mb-6 truncate  ">${news.details ? news.details : 'There is no detalis in this news'}</p>
                     <div class="card-actions lg:justify-between items-center mt-8 lg:mt-0 w-full">
                         <div class="flex mb-10 lg:mb-0 ">
                             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
@@ -40,8 +40,8 @@ const displayNewsAll = idNumber => {
                                 </div>
                             </label>
                             <div class="ml-2 lg:ml-5 ">
-                                <p>${news.author.name}</p>
-                                <p>${news.author.published_date}</p>
+                                <p >${news.author.name ? news.author.name : 'No Author name'}</p>
+                                <p>${news.author.published_date ? news.author.published_date : 'No Published Date'}</p>
                             </div>
                         </div>
     
@@ -53,9 +53,9 @@ const displayNewsAll = idNumber => {
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
     
-                            <p class="ml-3"> ${news.total_view}M</p>
+                            <p class="ml-3"> ${news.total_view ? news.total_view : '00'}M</p>
                         </div>
-                        <div class="rating mr-16 lg:mr-0">
+                        <div class="rating mr-12 lg:mr-0">
                             <input type="radio" name="rating-1" class="mask mask-star" />
                             <input type="radio" name="rating-1" class="mask mask-star" checked />
                             <input type="radio" name="rating-1" class="mask mask-star" />
@@ -92,6 +92,6 @@ const toggleSpinner = isLoading => {
         loaderSection.classList.add('hidden');
     }
 }
-// newsDetail();
-// showNewsCatagory('All News');
+
+showNewsCatagory('03');
 clickNewsCatagaroy();

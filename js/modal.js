@@ -17,9 +17,9 @@ const newsModalDetails = newsModal => {
     modalTitle.innerText = newsModal.title;
 
     const authorName = document.getElementById('author-name');
-    authorName.innerText = newsModal.author.name;
+    authorName.innerText = newsModal.author.name ? newsModal.author.name : 'No Author name';
 
     const datePublised = document.getElementById('data-publised');
-    datePublised.innerText = newsModal.author?.published_date;
+    datePublised.innerText = newsModal.author.published_date ? newsModal.author.published_date : 'No Published date';
 
 }

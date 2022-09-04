@@ -13,7 +13,10 @@
 </head>
 
 <body class="bg-base-100">
-    <header class="lg:my-4 px-4 mt-4">
+
+    <!-- header part -->
+
+    <header class="lg:my-4 px-4 mt-4 bg-base-100">
         <nav class="navbar bg-base-100">
             <div class="navbar-start">
                 <p class="text-xl lg:ml-5 font-bold"><span class="text-orange-600">WC
@@ -23,33 +26,7 @@
                 <ul class="menu menu-horizontal p-0">
                     <li class=""><button>News</button></li>
                     <li class="mr-2 lg:mr-4">
-                        <label for="my-modal-5" class="btn modal-button ">Blog</label>
-                        <input type="checkbox" id="my-modal-5" class="modal-toggle" />
-                        <div class="modal">
-                            <div class="modal-box w-11/12 max-w-5xl">
-                                <h1 class="mb-4">1. Difference between var , let and const ?</h1>
-                                <p class="mb-4 text-sm">Ans : Variables declared with var and const are scoped to the
-                                    immediate function body.
-                                    Variables declared with the var keyword are hoisted. Hoisting means that the
-                                    variable can be accessed in their enclosing scope even before they are declared.
-                                    Variables declared with the let keyword are block-scoped, which means the variables
-                                    will have scope to the immediate enclosing block.</p>
-                                <h1 class="mb-4">2. Difference between arrow function and regular function ?</h1>
-                                <p class="mb-4">Ans : An arrow function is also known as the fat arrow function. It is a
-                                    new feature introduced in ES6 that is a more concise syntax for writing function
-                                    expressions. Both regular JavaScript functions and arrow functions work in a similar
-                                    manner but there are some differences between them. Let's see the differences below:
-                                    1.Syntax 2.Arguments binding 3.Use of this keyword 4.Using a new keyword</p>
-                                <h1 class="mb-4">3. Why we use template string in Javascript ?</h1>
-                                <p>Ans : Template literals are literals delimited with backtick (`) characters, allowing
-                                    for multi-line strings, for string interpolation with embedded expressions, and for
-                                    special constructs called tagged templates</p>
-                                <div class="modal-action border-0">
-                                    <label for="my-modal-5" class="btn bg-red-700 border-0">Close</label>
-                                </div>
-                            </div>
-                        </div>
-
+                        <button id="open-blog">Blog</button>
                     </li>
                     <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                         <div class="w-10 rounded-full">
@@ -61,18 +38,23 @@
         </nav>
     </header>
     <hr class="hidden lg:block">
-    <header id="news-btn" class=" lg:my-4">
+    <header id="news-btn" class=" lg:my-4 bg-base-100">
 
     </header>
     <hr class="lg:hidden ">
-    <!-- no result found -->
+
+    <!-- loader -->
+
     <progress id="spinner" class="progress w-full hidden"></progress>
     <section id="not-found"></section>
-    <main class="lg:container lg:mx-auto  my-10">
+
+    <!-- main part -->
+
+    <main class="lg:container lg:mx-auto  my-10 bg-base-100">
         <section class="px-10 lg:px-0 mb-10">
             <div
                 class=" lg:pl-8 h-14 text-xl bg-base-300 rounded-md w-full flex items-center justify-center lg:justify-start">
-                <p><span id="news-found">0</span> items found here</p>
+                <p><span id="news-found">0</span> items found in this category</p>
             </div>
         </section>
         <section class=" flex mt-7 lg:flex items-center justify-between lg:px-0 px-10 mb-6">
@@ -98,12 +80,13 @@
         <div id="no-found-message" class="text-center hidden text-yellow-400 mt-4">
             <h3 class="text-yellow-400 lg:text-4xl">No News found here. Please try new search</h3>
         </div>
-        <section id="news-container" class=" bg-base-200 rounded-xl">
+        <section id="news-container" class=" bg-base-200 rounded-xl ">
 
             <!-- Card Design -->
 
-
         </section>
+
+        <!-- modal part -->
 
         <input type="checkbox" id="my-modal-3" class="modal-toggle" />
         <div class="modal">
@@ -118,6 +101,9 @@
         </div>
 
     </main>
+
+    <!-- footer part -->
+
     <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
         <div class="grid grid-flow-col gap-4">
             <a class="link link-hover">About us</a>

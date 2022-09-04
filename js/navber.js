@@ -12,12 +12,11 @@ const clickNewsCatagaroy = async () => {
     }
 }
 
-const displayNews = (catagoryByNews) => {
-
+const displayNews = catagoryByNews => {
     const newsContainer = document.getElementById('news-btn');
 
     const navberDiv = document.createElement('div');
-    toggleSpinner(true);
+
     navberDiv.innerHTML = `
     <nav class="navbar bg-base-100">
         <div class="">
@@ -62,3 +61,7 @@ const displayNews = (catagoryByNews) => {
     newsContainer.appendChild(navberDiv);
 
 }
+
+document.getElementById('open-blog').addEventListener('click', function () {
+    window.location.href = 'blog-part.html';
+})
