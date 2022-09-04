@@ -45,7 +45,7 @@ const displayNewsAll = idNumber => {
                             </div>
                         </div>
     
-                        <div class="flex mb-10 lg:mb-0 ml-5 lg:ml-0">
+                        <div class="flex mb-10 lg:mb-0 ml-2 lg:ml-0">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
