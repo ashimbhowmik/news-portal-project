@@ -24,7 +24,7 @@ const displayNewsAll = idNumber => {
             // console.log(news); 
             const newsDiv = document.createElement('div');
             newsDiv.innerHTML = `
-            <div class="lg:flex py-4 px-4 mb-5 drop-shadow-xl">
+            <div class="lg:flex py-4 px-4 mb-8 shadow-xl lg:mx-6">
                 <div class="lg:w-3/12 w-full mb-4 lg:mb-0 ">
                     <figure><img class="w-full h-96" src="${news.thumbnail_url}" alt="Album"></figure>
                 </div>
@@ -45,7 +45,7 @@ const displayNewsAll = idNumber => {
                             </div>
                         </div>
     
-                        <div class="flex mb-10 lg:mb-0 ml-10 lg:ml-0">
+                        <div class="flex mb-10 lg:mb-0 ml-5 lg:ml-0">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -62,7 +62,7 @@ const displayNewsAll = idNumber => {
                             <input type="radio" name="rating-1" class="mask mask-star" />
                             <input type="radio" name="rating-1" class="mask mask-star" />
                         </div>
-                        <label onclick="newsDetail('${news._id}')" for="my-modal-3" class="btn modal-button ml-24 lg:ml-0"><i
+                        <label onclick="newsDetail('${news._id}')" for="my-modal-3" class="btn modal-button ml-20 lg:ml-0"><i
                                 class="fa-solid fa-arrow-right"></i></label>
                     </div>
                 </div>
